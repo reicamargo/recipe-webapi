@@ -14,12 +14,6 @@ namespace WebApiReceitas.Models
         [Required]
         public string Titulo { get; set; }
         public bool Ativo { get; set; }
-
-        public ICollection<Receita> Receitas { get; set; }
-
-        public Categoria()
-        {
-            this.Receitas = new List<Receita>();
-        }
+        public virtual ICollection<Receita> Receitas { get; set; }
     }
 }

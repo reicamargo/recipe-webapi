@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace WebApiReceitas.Models.Repositories
 {
@@ -21,15 +22,21 @@ namespace WebApiReceitas.Models.Repositories
             return item;
         }
 
-        public List<Categoria> ListarCategorias()
+        public ICollection<Categoria> ListarCategorias()
         {
-            var categorias = context.Categorias.OrderBy(c => c.Titulo).ToList();
+            var categorias = context
+                            .Categorias
+                            .OrderBy(c => c.Titulo)
+                            .ToList();
             return categorias;
         }
 
         public Categoria BuscarCategoria(int id)
         {
-            return context.Categorias.Where(c => c.Id == id).FirstOrDefault();
+            return context
+                .Categorias
+                .Where(c => c.Id == id)
+                .FirstOrDefault();
         }
 
         public void ExcluirCategoria(int id)
@@ -37,7 +44,9 @@ namespace WebApiReceitas.Models.Repositories
             var item = this.BuscarCategoria(id);
             if (item != null)
             {
-                context.Categorias.Remove(item);
+                item.Ativo = false;
+                context.Categorias.Attach(item);
+                context.SaveChanges();
             }
         }
     }

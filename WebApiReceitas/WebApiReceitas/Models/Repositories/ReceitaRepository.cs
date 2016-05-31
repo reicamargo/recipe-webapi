@@ -37,7 +37,9 @@ namespace WebApiReceitas.Models.Repositories
             var item = this.BuscarReceita(id);
             if (item != null)
             {
-                context.Receitas.Remove(item);
+                item.Ativo = false;
+                context.Receitas.Attach(item);
+                context.SaveChanges();
             }
         }
     }
