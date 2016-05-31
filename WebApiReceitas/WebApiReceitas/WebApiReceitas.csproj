@@ -124,8 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ReceitaController.cs" />
-    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\ReceitasController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -137,6 +137,10 @@
     <Compile Include="Migrations\201605202024013_SegundaMigracao.Designer.cs">
       <DependentUpon>201605202024013_SegundaMigracao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605311410208_CustomizacaoFK.cs" />
+    <Compile Include="Migrations\201605311410208_CustomizacaoFK.Designer.cs">
+      <DependentUpon>201605311410208_CustomizacaoFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
@@ -147,9 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\PublishProfiles\webapireceitas - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\webapireceitas - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -168,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605202024013_SegundaMigracao.resx">
       <DependentUpon>201605202024013_SegundaMigracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605311410208_CustomizacaoFK.resx">
+      <DependentUpon>201605311410208_CustomizacaoFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

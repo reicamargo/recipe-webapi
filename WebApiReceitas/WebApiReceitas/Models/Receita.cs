@@ -11,6 +11,7 @@ namespace WebApiReceitas.Models
     public class Receita
     {
         public int Id { get; set; }
+        public int CategoriaID { get; set; }
         public Categoria Categoria { get; set; }
         [Required]
         public string Titulo { get; set; }
