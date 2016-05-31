@@ -153,6 +153,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\webapireceitas - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\webapireceitas - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\webapireceitas.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
